@@ -2,7 +2,11 @@
 
 ## Description
 
+<<<<<<< HEAD
 ![alt text](/Assets/view.png "Logo Title Text 1")
+=======
+![https://github.com/QasimAbbas/ShudderFeatured/Assets/view.png](ShudderFeatured/Assets/view.png "Logo Title Text 1")
+>>>>>>> 78be84a11bf0fac93e0c540ed10023358087530c
 
 ### Purpose
 
