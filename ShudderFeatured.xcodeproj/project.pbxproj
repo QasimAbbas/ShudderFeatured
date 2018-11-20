@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96B673C821A2CEF600BFBAE9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B673C721A2CEF600BFBAE9 /* API.swift */; };
+		96B673CD21A2FDC600BFBAE9 /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B673CC21A2FDC600BFBAE9 /* DataObjects.swift */; };
+		96B673D621A4711000BFBAE9 /* FeaturedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B673D521A4711000BFBAE9 /* FeaturedTableViewController.swift */; };
+		96B673D821A4711700BFBAE9 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B673D721A4711700BFBAE9 /* FeaturedCell.swift */; };
 		96C09E4321A0CD9200E807A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C09E4221A0CD9200E807A0 /* AppDelegate.swift */; };
-		96C09E4521A0CD9200E807A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C09E4421A0CD9200E807A0 /* ViewController.swift */; };
 		96C09E4821A0CD9200E807A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C09E4621A0CD9200E807A0 /* Main.storyboard */; };
 		96C09E4A21A0CD9500E807A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C09E4921A0CD9500E807A0 /* Assets.xcassets */; };
 		96C09E4D21A0CD9500E807A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C09E4B21A0CD9500E807A0 /* LaunchScreen.storyboard */; };
+		96C09E6621A11F2C00E807A0 /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C09E6521A11F2C00E807A0 /* CarouselCell.xib */; };
+		96C09E6821A1200900E807A0 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C09E6721A1200900E807A0 /* CarouselCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96B673C721A2CEF600BFBAE9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		96B673CC21A2FDC600BFBAE9 /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
+		96B673D521A4711000BFBAE9 /* FeaturedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedTableViewController.swift; sourceTree = "<group>"; };
+		96B673D721A4711700BFBAE9 /* FeaturedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
 		96C09E3F21A0CD9100E807A0 /* ShudderFeatured.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShudderFeatured.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C09E4221A0CD9200E807A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96C09E4421A0CD9200E807A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96C09E4721A0CD9200E807A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96C09E4921A0CD9500E807A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96C09E4C21A0CD9500E807A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96C09E4E21A0CD9500E807A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96C09E6521A11F2C00E807A0 /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
+		96C09E6721A1200900E807A0 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96B673C921A2FBB400BFBAE9 /* CarouselModel */ = {
+			isa = PBXGroup;
+			children = (
+				96B673CC21A2FDC600BFBAE9 /* DataObjects.swift */,
+			);
+			path = CarouselModel;
+			sourceTree = "<group>";
+		};
+		96B673D221A470F600BFBAE9 /* FeaturedView */ = {
+			isa = PBXGroup;
+			children = (
+				96B673D721A4711700BFBAE9 /* FeaturedCell.swift */,
+			);
+			path = FeaturedView;
+			sourceTree = "<group>";
+		};
+		96B673D921A4806300BFBAE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96B673D521A4711000BFBAE9 /* FeaturedTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		96C09E3621A0CD9100E807A0 = {
 			isa = PBXGroup;
 			children = (
@@ -55,13 +89,42 @@
 			isa = PBXGroup;
 			children = (
 				96C09E4221A0CD9200E807A0 /* AppDelegate.swift */,
-				96C09E4421A0CD9200E807A0 /* ViewController.swift */,
-				96C09E4621A0CD9200E807A0 /* Main.storyboard */,
+				96C09E5621A0D05B00E807A0 /* Model */,
+				96C09E5721A0D1A400E807A0 /* View */,
+				96B673D921A4806300BFBAE9 /* Controller */,
 				96C09E4921A0CD9500E807A0 /* Assets.xcassets */,
 				96C09E4B21A0CD9500E807A0 /* LaunchScreen.storyboard */,
 				96C09E4E21A0CD9500E807A0 /* Info.plist */,
 			);
 			path = ShudderFeatured;
+			sourceTree = "<group>";
+		};
+		96C09E5621A0D05B00E807A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96B673C721A2CEF600BFBAE9 /* API.swift */,
+				96B673C921A2FBB400BFBAE9 /* CarouselModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96C09E5721A0D1A400E807A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96C09E4621A0CD9200E807A0 /* Main.storyboard */,
+				96B673D221A470F600BFBAE9 /* FeaturedView */,
+				96C09E5B21A0D48B00E807A0 /* CarouselView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96C09E5B21A0D48B00E807A0 /* CarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				96C09E6521A11F2C00E807A0 /* CarouselCell.xib */,
+				96C09E6721A1200900E807A0 /* CarouselCell.swift */,
+			);
+			path = CarouselView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +137,7 @@
 				96C09E3B21A0CD9100E807A0 /* Sources */,
 				96C09E3C21A0CD9100E807A0 /* Frameworks */,
 				96C09E3D21A0CD9100E807A0 /* Resources */,
+				96C09E5E21A0D66D00E807A0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -124,19 +188,44 @@
 			files = (
 				96C09E4D21A0CD9500E807A0 /* LaunchScreen.storyboard in Resources */,
 				96C09E4A21A0CD9500E807A0 /* Assets.xcassets in Resources */,
+				96C09E6621A11F2C00E807A0 /* CarouselCell.xib in Resources */,
 				96C09E4821A0CD9200E807A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		96C09E5E21A0D66D00E807A0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		96C09E3B21A0CD9100E807A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C09E4521A0CD9200E807A0 /* ViewController.swift in Sources */,
+				96C09E6821A1200900E807A0 /* CarouselCell.swift in Sources */,
+				96B673D621A4711000BFBAE9 /* FeaturedTableViewController.swift in Sources */,
 				96C09E4321A0CD9200E807A0 /* AppDelegate.swift in Sources */,
+				96B673D821A4711700BFBAE9 /* FeaturedCell.swift in Sources */,
+				96B673CD21A2FDC600BFBAE9 /* DataObjects.swift in Sources */,
+				96B673C821A2CEF600BFBAE9 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
