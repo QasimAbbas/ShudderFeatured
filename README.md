@@ -2,11 +2,7 @@
 
 ## Description
 
-<<<<<<< HEAD
 ![alt text](/Assets/view.png "Logo Title Text 1")
-=======
-![https://github.com/QasimAbbas/ShudderFeatured/Assets/view.png](ShudderFeatured/Assets/view.png "Logo Title Text 1")
->>>>>>> 78be84a11bf0fac93e0c540ed10023358087530c
 
 ### Purpose
 
@@ -43,6 +39,8 @@ Model:
 Jazzy cli is used to generate the documentation.
 
 Please open the **index.html**, located in *ShudderFeatured/docs/* in a browser to view all the documentation in a visual web page.
+
+![alt text](/Assets/documentation.png "Logo Title Text 1")
 
 ### Potential Issues
 Flickr API is called on multiple threads to create more efficiency of network and energy from the amount of calls that needs to be created.  This also provides speed increase in speed as well.  Unfortunately this creates many calls to the server, 1 for each *section* and then for each *image* which can cause **rate limiting** and not be able to receive all the data and sections upon consecutive calls.  **All data may not be received or loaded into Carousels including sections and individual items due to this issue!**
