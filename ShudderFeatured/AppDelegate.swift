@@ -9,6 +9,8 @@
 import UIKit
 
 @UIApplicationMain
+
+///Inital Application Calls/Background handling
 class AppDelegate: UIResponder, UIApplicationDelegate {
 // swiftlint:disable line_length
     var window: UIWindow?

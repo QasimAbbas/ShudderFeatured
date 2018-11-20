@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+///Cell that will be handling the Carousel with CollectionViews
 class FeaturedCell: UITableViewCell {
 
+    ///CollectionView where CarouselSets are set and items will be presented from dataCollection
     @IBOutlet weak var collectionView: UICollectionView!
 
     /// This sets the location of the off set of the CollectionView.  As the tableview is being scrolled and reusable cells are being dequed, this saves the last state of the CollectionView per row that it was scrolled to.

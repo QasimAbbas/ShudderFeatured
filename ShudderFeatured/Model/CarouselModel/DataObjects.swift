@@ -19,10 +19,14 @@ var sectionColor = UIColor(red: 105/255, green: 114/255, blue: 117/255, alpha: 1
 
 ///Object used to create Carousel Sets.  Data to be loading into CollectionViews.
 class CarouselSet: NSObject {
+    ///Index of the CarouselSet in dataCollection
     var index: Int?
+    ///Name of the CarouselSet, also acts as the section name
     var name: String?
+    ///[CarouselItem] that will be carried
     var itemSet: [CarouselItem] = [CarouselItem]()
 
+    ///Initialzing name of CarouselSet
     init(name: String) {
         self.name = name
     }
@@ -30,13 +34,17 @@ class CarouselSet: NSObject {
 
 /// Objects to create items that will be loaded into CollectionViews.
 class CarouselItem: NSObject {
+    ///Ordering of the items
     var index: Int?
+    ///Image to be loaded from fetched image Data
     var image: UIImage?
 
+    ///Setting the image name for local images
     init(imageName: String) {
         self.image = UIImage(named: imageName)
     }
 
+    ///Setting the images with Data
     init(imageData: Data) {
         self.image = UIImage(data: imageData)
     }

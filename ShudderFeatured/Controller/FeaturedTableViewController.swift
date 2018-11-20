@@ -8,11 +8,13 @@
 
 import UIKit
 
+///The ViewController that will be handling the controls of displaying information to various Views and fetching information from the Model using **DataObjects** and **API**
 class FeaturedTableViewController: UITableViewController {
 
     ///Storing the values of the offsets to saev locations of where CollectionViews have been scrolled to before dequeuing
     var storedOffsets = [Int: CGFloat]()
 
+    ///Loading the visual elements that will appear from **visualElements**
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         visualElements()
@@ -31,6 +33,7 @@ class FeaturedTableViewController: UITableViewController {
 
     }
 
+    ///Loading the temporary data into DataCollection
     override func viewDidLoad() {
         super.viewDidLoad()
         let names = ["Horror", "Comedy", "Family", "Children", "SciFi", "Musical", "Film"]
@@ -44,6 +47,7 @@ class FeaturedTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
 
+    ///Helper method to sort that names in DataCollection to the order they were given in, since they can be returned back into another order due to multithreading
     func sortDataCollection(names: [String]) {
         let placeHolder = dataCollection
         dataCollection.removeAll()
@@ -56,17 +60,19 @@ class FeaturedTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    ///Sections tableview is separated, there is only one section
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
+    ///Number of rows in the section in this case would be twice as large as dataCollections count since there are 2 reusable cells and one is acting as a section header
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return dataCollection.count * 2
     }
 
+    ///Set each cell with data, depending on if it is a title cell or a CollectionCell which is a cell that needs to be loaded with the images of the collection view
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if indexPath.row % 2 == 0 {
@@ -83,6 +89,7 @@ class FeaturedTableViewController: UITableViewController {
 
     }
 
+    ///Setting the offset and creating the collection views per cell that is being displayed
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let tableViewCell = cell as? FeaturedCell else { return }
 
@@ -91,10 +98,13 @@ class FeaturedTableViewController: UITableViewController {
         tableViewCell.contentView.frame = CGRect(x: 0, y: 0, width: 118, height: 118)
     }
 
+    ///Storing the offset as a cell is being reused so it can be saved and loaded when it is displayed again
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let tableViewCell = cell as? FeaturedCell else { return }
         storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
     }
+
+    ///Configure heights of the section cell and CarouselCell
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         return (indexPath.row % 2) != 0 ? 118 : 20
@@ -119,11 +129,12 @@ class FeaturedTableViewController: UITableViewController {
 
 extension FeaturedTableViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    ////Configuring the count of elements in CarouselSet at index in DataCollection
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         collectionView.backgroundColor = backgroundColor
         return dataCollection[sequenNumber(integer: collectionView.tag)].itemSet.count
     }
-
+    ///Set CarouselCell with image for correct CollectionView which is configured by tag as well as loading each item with image from CarouselItem
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CarouselCell else {
@@ -134,7 +145,7 @@ extension FeaturedTableViewController: UICollectionViewDelegate, UICollectionVie
         cell.backgroundColor = backgroundColor
         return cell
     }
-
+    ///Configure the height and width layout of the cells in CollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 78, height: 118)
     }

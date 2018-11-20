@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// CarouselCell structure configuration
 class CarouselCell: UICollectionViewCell {
 
     /// Image that will be shown up as item of CarouselItem
