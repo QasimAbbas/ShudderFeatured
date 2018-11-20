@@ -2,6 +2,8 @@
 
 ## Description
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 ### Purpose
 
 This is a recreation of the Shudder application's Featured View.  This view takes images from the Flickr API and displays them in Carousels.
