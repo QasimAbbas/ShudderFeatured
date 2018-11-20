@@ -36,7 +36,7 @@ class FeaturedTableViewController: UITableViewController {
     ///Loading the temporary data into DataCollection
     override func viewDidLoad() {
         super.viewDidLoad()
-        let names = ["Horror", "Comedy", "Family", "Children", "SciFi", "Musical", "Film"]
+        let names = ["Comedy", "Family", "Children", "SciFi", "Musical", "Film", "Mystery"]
         addCollectionSearchSetToDataCollection(names: names, completion: {
             DispatchQueue.main.async {
                 self.sortDataCollection(names: names)
