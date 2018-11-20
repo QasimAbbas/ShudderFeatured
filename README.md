@@ -2,7 +2,7 @@
 
 ## Description
 
-![https://github.com/QasimAbbas/ShudderFeatured/blob/master/Assets/view.png](ShudderFeatured/Assets/view.png "Logo Title Text 1")
+![https://github.com/QasimAbbas/ShudderFeatured/Assets/view.png](ShudderFeatured/Assets/view.png "Logo Title Text 1")
 
 ### Purpose
 
