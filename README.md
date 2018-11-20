@@ -16,17 +16,17 @@ To create sections, an array of strings can be given inside of**FeaturedTableVie
 The way this project calls to Flickr API is created and managed with requests that first get the list of 25 results for each *word* that is given to **addCollectionSearchSetToDataCollection** and then calls to recieve all the images. and load them into CarouselItems and CarouselSets.  All calls are done on separate threads to speed up calls and increase energy efficiency over a longer period of time.
 
 Controller:
-* FeaturedTableViewController
+* FeaturedTableViewController - Controller that coordinates information and logic between the View and Model
 
 View:
-* Main.Storyboard
-* CarouselCell
+* Main.Storyboard - Visual Structure and Views
+* CarouselCell - View
 
 Model:
-* CarouselItem
-* CarouselSet
-* DataObjects
-* API
+* CarouselItem - Data Class
+* CarouselSet - Data Class
+* DataObjects - Location of logic Data Classes and Data Structure
+* API - All API calls and storage handling of data
 
 ### Tools
 * Xcode - Integerated development environment
@@ -39,5 +39,5 @@ Jazzy cli is used to generate the documentation.
 Please open the **index.html**, located in *ShudderFeatured/docs/* in a browser to view all the documentation in a visual web page.
 
 ### Potential Issues
-Flickr API is called on multiple threads to create more efficiency of network and energy fromt the amount of calls that needs to be created.  This also provides speed increase in speed as well.  Unfortunately this creates many calls to the server, 1 for each *section* and then for each *image* which can cause **rate limiting** and not be able to recieve all the data and sections upon consecutive calls.  All data may not be recieved or loaded into Carousels including sections and individual items due to this issue!
+Flickr API is called on multiple threads to create more efficiency of network and energy fromt the amount of calls that needs to be created.  This also provides speed increase in speed as well.  Unfortunately this creates many calls to the server, 1 for each *section* and then for each *image* which can cause **rate limiting** and not be able to recieve all the data and sections upon consecutive calls.  **All data may not be recieved or loaded into Carousels including sections and individual items due to this issue!**
 
