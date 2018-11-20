@@ -2,7 +2,7 @@
 
 ## Description
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![Screenshot of CarouselView](ShudderFeatured/Assets/view.png "Logo Title Text 1")
 
 ### Purpose
 
