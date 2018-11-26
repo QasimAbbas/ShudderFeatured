@@ -9,8 +9,18 @@
 import Foundation
 import UIKit
 
+var bannerCollection: [CarouselSet] = [CarouselSet]()
+
 ///Set of CarouselSets that is recieved to load into the FeaturedTableViewController
-var dataCollection: [CarouselSet] = [CarouselSet]()
+var dataCollection: [CarouselSet] = [CarouselSet]() {
+    willSet {
+        //print("I am changing data Collection")
+    }
+
+    didSet {
+         //print("I have changed")
+    }
+}
 
 ///Background color of views
 var backgroundColor = UIColor(red: 23/255, green: 31/255, blue: 34/255, alpha: 1)
@@ -69,24 +79,55 @@ func dataArrayToCarouselItems(data: [Data]) -> [CarouselItem] {
 /// - parameter completion: callback for once the [CarouselSets] have been created and added to **dataCollection** to be loaded into **FeaturedTableViewController**
 func addCollectionSearchSetToDataCollection(names: [String], completion: @escaping () -> Void) {
 
-    DispatchQueue.global(qos: .userInitiated).async {
-        for (index, name) in names.enumerated() {
+    var start = 0
+    DispatchQueue.global(qos: .userInitiated).sync {
+        for name in names {
             let group = DispatchGroup()
             group.enter()
             getSearch(searchItem: name) { (data) in
                 let carouselSet = CarouselSet(name: name)
                 carouselSet.itemSet = dataArrayToCarouselItems(data: data)
+//                print("RETURNED ITEMS \(carouselSet.itemSet.count)")
                 dataCollection.append(carouselSet)
                 group.leave()
+                start += 1
+//                print("THREAD COUNT \(start)")
 
             }
-            if index == names.count-1 {
-                print(index)
-                group.wait()
+            group.notify(queue: .main, execute: {
+//                print("CALL BACK")
                 completion()
-            }
+            })
 
         }
     }
+}
 
+/// Take [String] of searches for Flickr API and do searches to recieve back and create [CarouselItems] and append them **bannerCollection**
+/// - parameter names: [String] of words to be searched and created
+/// - parameter completion: callback for once the [CarouselSets] have been created and added to **dataCollection** to be loaded into **FeaturedTableViewController**
+func addCollectionSearchSetToBannerCollection(names: [String], completion: @escaping () -> Void) {
+
+    var start = 0
+    DispatchQueue.global(qos: .userInitiated).sync {
+        for name in names {
+            let group = DispatchGroup()
+            group.enter()
+            getSearch(searchItem: name) { (data) in
+                let carouselSet = CarouselSet(name: name)
+                carouselSet.itemSet = dataArrayToCarouselItems(data: data)
+//                print("RETURNED ITEMS \(carouselSet.itemSet.count)")
+                bannerCollection.append(carouselSet)
+                group.leave()
+                start += 1
+//                print("THREAD COUNT \(start)")
+
+            }
+            group.notify(queue: .main, execute: {
+//                print("CALL BACK")
+                completion()
+            })
+
+        }
+    }
 }

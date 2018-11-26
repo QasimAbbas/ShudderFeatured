@@ -1,4 +1,4 @@
-# ShudderFeatured
+# Shudder Featured View Recreation
 
 ## Description
 

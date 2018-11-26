@@ -11,7 +11,7 @@ import UIKit
 class FeaturedCell: UITableViewCell {
 
     ///CollectionView where CarouselSets are set and items will be presented from dataCollection
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: CustomCollectionView!
 
     /// This sets the location of the off set of the CollectionView.  As the tableview is being scrolled and reusable cells are being dequed, this saves the last state of the CollectionView per row that it was scrolled to.
     var collectionViewOffset: CGFloat {
@@ -33,13 +33,19 @@ class FeaturedCell: UITableViewCell {
      */
     func setCollectionViewDataSourceDelegate
         <D: UICollectionViewDataSource & UICollectionViewDelegate>
-        (dataSourceDelegate: D, forRow row: Int) {
+        (dataSourceDelegate: D, forRow row: Int, forIdentifier identifier: String) {
 
         collectionView.delegate = dataSourceDelegate
         collectionView.dataSource = dataSourceDelegate
         collectionView.tag = row
+        collectionView.identifier = identifier
         collectionView.register(UINib(nibName: "CarouselCell", bundle: Bundle.main), forCellWithReuseIdentifier: "Cell")
         collectionView.reloadData()
     }
 
+}
+
+///Creating a custom CollectionView to separate the identifiers of Banners and Carousel to reuse the CollectionView Carousel Implementation
+class CustomCollectionView: UICollectionView {
+    var identifier: String = ""
 }

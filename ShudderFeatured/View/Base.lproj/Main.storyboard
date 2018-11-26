@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,8 +19,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeaturedCollectionCell" rowHeight="198" id="OXv-NS-qv9" customClass="FeaturedCell" customModule="ShudderFeatured" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="198"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OXv-NS-qv9" id="f2v-wd-6zc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="197.5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4qt-hT-TsH" customClass="CustomCollectionView" customModule="ShudderFeatured" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="scrollIndicatorInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="6" minimumInteritemSpacing="10" id="v9B-oE-Cco">
+                                                <size key="itemSize" width="354" height="174"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCollectionCell" id="pom-2q-9xE" customClass="CarouselCell" customModule="ShudderFeatured" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="11.5" width="354" height="174"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="174"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </view>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView" destination="4qt-hT-TsH" id="GIY-7v-w2p"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleCell" textLabel="0KN-qy-Sgr" rowHeight="16" style="IBUITableViewCellStyleDefault" id="7yi-id-gbV">
-                                <rect key="frame" x="0.0" y="28" width="375" height="16"/>
+                                <rect key="frame" x="0.0" y="226" width="375" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7yi-id-gbV" id="wHt-0r-OGT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="15.5"/>
@@ -37,13 +75,13 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeaturedCell" rowHeight="130" id="lVv-n4-PES" customClass="FeaturedCell" customModule="ShudderFeatured" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="242" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lVv-n4-PES" id="6un-PO-P1b">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ild-I2-PhA">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ild-I2-PhA" customClass="CustomCollectionView" customModule="ShudderFeatured" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPO-jO-PcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3865" y="-41"/>
+            <point key="canvasLocation" x="3864.8000000000002" y="-41.829085457271368"/>
         </scene>
         <!--Item-->
         <scene sceneID="aP1-qc-wtY">
@@ -110,15 +148,64 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viT-Yd-Qd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="-63"/>
+            <point key="canvasLocation" x="2964" y="-27"/>
+        </scene>
+        <!--ShudderTV-->
+        <scene sceneID="ER1-lX-pq3">
+            <objects>
+                <viewController id="pcX-Iw-TN7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gju-zk-EnF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Mei-gW-ARi"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="ShudderTV" id="RSb-20-md6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pxh-Ok-02q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2053" y="745"/>
+        </scene>
+        <!--Collections-->
+        <scene sceneID="zbo-9o-pxa">
+            <objects>
+                <viewController id="aSv-Bf-pab" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MTe-WB-kV3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zXQ-Al-Jm7"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Collections" id="sXd-Ml-TkQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ak-Bw-Dn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2964" y="761"/>
+        </scene>
+        <!--Browse-->
+        <scene sceneID="ClF-OO-jwd">
+            <objects>
+                <viewController id="rWJ-Vn-rwK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6xa-rv-fQm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2qx-Nr-oF8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Browse" id="lG0-Kf-a2J"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3D-vW-Pv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3865" y="761"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Kx2-ry-jUY">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uHV-pu-XFz" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uHV-pu-XFz" customClass="TabBarController" customModule="ShudderFeatured" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="exT-NX-Xnc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tni-rj-bwQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,11 +218,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="JIi-Fh-iJB" kind="relationship" relationship="viewControllers" id="TVS-KM-xXE"/>
+                        <segue destination="pcX-Iw-TN7" kind="relationship" relationship="viewControllers" id="1tV-hE-dp2"/>
+                        <segue destination="aSv-Bf-pab" kind="relationship" relationship="viewControllers" id="eFi-oa-vdp"/>
+                        <segue destination="rWJ-Vn-rwK" kind="relationship" relationship="viewControllers" id="RWM-FU-MNd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCt-xX-hiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="-63"/>
+            <point key="canvasLocation" x="2044" y="-27"/>
         </scene>
     </scenes>
     <resources>
