@@ -37,6 +37,7 @@ Model:
 * Xcode - Integrated development environment
 * Swiftlint - Linter that handles swift syntactic sugar/code smells/other various swift structures for consistency and readability of code
 * Jazzy - Documentation generator that creates a layout to view documentation as well as catch methods/properties that have not been documented.
+* Git - Version control for project implementation
 
 ### Documentation
 Jazzy cli is used to generate the documentation.
