@@ -9,18 +9,11 @@
 import Foundation
 import UIKit
 
-var bannerCollection: [CarouselSet] = [CarouselSet]()
-
 ///Set of CarouselSets that is recieved to load into the FeaturedTableViewController
-var dataCollection: [CarouselSet] = [CarouselSet]() {
-    willSet {
-        //print("I am changing data Collection")
-    }
+var dataCollection: [CarouselSet] = [CarouselSet]()
 
-    didSet {
-         //print("I have changed")
-    }
-}
+///Items that compose of Banner Carousel.  Reuseses implemenation of carousels used for movie items
+var bannerCollection: [CarouselSet] = [CarouselSet]()
 
 ///Background color of views
 var backgroundColor = UIColor(red: 23/255, green: 31/255, blue: 34/255, alpha: 1)

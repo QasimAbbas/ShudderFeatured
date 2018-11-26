@@ -40,6 +40,9 @@
                 <a href="Classes/CarouselSet.html">CarouselSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/CustomCollectionView.html">CustomCollectionView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/FeaturedCell.html">FeaturedCell</a>
               </li>
               <li class="nav-group-task">
@@ -60,6 +63,9 @@
                 <a href="Global Variables.html#/s:15ShudderFeatured15backgroundColorSo7UIColorCvp">backgroundColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="Global Variables.html#/s:15ShudderFeatured16bannerCollectionSayAA11CarouselSetCGvp">bannerCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Global Variables.html#/s:15ShudderFeatured14dataCollectionSayAA11CarouselSetCGvp">dataCollection</a>
               </li>
               <li class="nav-group-task">
@@ -73,6 +79,9 @@
           <li class="nav-group-name">
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:15ShudderFeatured030addCollectionSearchSetToBannerD05names10completionySaySSG_yyctF">addCollectionSearchSetToBannerCollection(names:completion:)</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:15ShudderFeatured028addCollectionSearchSetToDataD05names10completionySaySSG_yyctF">addCollectionSearchSetToDataCollection(names:completion:)</a>
               </li>
@@ -123,6 +132,12 @@
                       <div class="abstract">
                         <p>Gets a string and calls search calling the Flickr API and search for the string that was passed.  After found, the data of what is found is oassed to parseSearchObject to parse the search results into data which can be converted into images.</p>
 
+<ul>
+<li>searchItem: The string to be searched by to find items from Flickr</li>
+<li>completion: The completion handler that waits for all data to be parsed and converted, then returns an array of [Data]</li>
+<li>result: [Data] that is returned back after data that was recieved was all parsed into Data objects</li>
+</ul>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -131,49 +146,6 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getSearch</span><span class="p">(</span><span class="nv">searchItem</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">Data</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>searchItem</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The string to be searched by to find items from Flickr</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>completion</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The completion handler that waits for all data to be parsed and converted, then returns an array of [Data]</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>result</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>[Data] that is returned back after data that was recieved was all parsed into Data objects</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -243,6 +215,12 @@
                       <div class="abstract">
                         <p>Takes the data object from <strong>getSearch</strong> and parses into a jsonObject.  Then the <strong>photoData</strong> is to be parsed into indidual images calling <strong>photoData</strong> method</p>
 
+<ul>
+<li>data: Data from <strong>getSearch</strong></li>
+<li>completion: waiting for the Data recived from <strong>getSearch</strong> to be parsed into separate Data objects of image information.</li>
+<li>dataArray: Returning the image that array [Data] that is being parsed.</li>
+</ul>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -251,49 +229,6 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">parseSearchObject</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">dataArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Data</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>data</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Data from <strong>getSearch</strong></p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>completion</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>waiting for the Data recived from <strong>getSearch</strong> to be parsed into separate Data objects of image information.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>dataArray</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Returning the image that array [Data] that is being parsed.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -313,6 +248,12 @@
                       <div class="abstract">
                         <p>Photo parameter from the json that is received the <strong>getSearch</strong> needs to be extraced and then photo data needs to be extraed to get Data of images to be used to load into imageViews.  This requires another Flickr API call that will get image information from parameters recived from Data from <strong>getSearch</strong> of the set of photos.  This uses multiple threads to recieve the information in parallel to save on computing over a longer period of time since each image needs to be fetched one by one.</p>
 
+<ul>
+<li>photo: Photo object from the json that is being converted by <strong>parseSearchObject</strong></li>
+<li><p>completion: A FlickrAPI Call in the method <strong>createFarm</strong> to get actual image Data that will be returned as a set of Data objects in [Data]</p></li>
+<li><p>result: [Data] of image data recived from Flickr API</p></li>
+</ul>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -321,49 +262,6 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">photoData</span><span class="p">(</span><span class="nv">photo</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">Data</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>photo</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Photo object from the json that is being converted by <strong>parseSearchObject</strong></p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>completion</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A FlickrAPI Call in the method <strong>createFarm</strong> to get actual image Data that will be returned as a set of Data objects in [Data]</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>result</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>[Data] of image data recived from Flickr API</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -383,6 +281,15 @@
                       <div class="abstract">
                         <p>Calls to the Flickr API with parameters that are need to construct the call to recive image Data</p>
 
+<ul>
+<li>farmID: ID of the farm used to get image from Flickr API</li>
+<li>serverID: ID of the server used to get image from Flickr API</li>
+<li>photoID: ID of the photo used to get image from Flickr API</li>
+<li>secretID: ID of the secret used to get image from Flickr API</li>
+<li>completion: callback from the method once image data is recieved</li>
+<li>result: return image Data that is recived from FLickr API</li>
+</ul>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -391,85 +298,6 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createFarm</span><span class="p">(</span><span class="nv">farmID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">serverID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">photoID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">secretID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>farmID</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>ID of the farm used to get image from Flickr API</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>serverID</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>ID of the server used to get image from Flickr API</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>photoID</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>ID of the photo used to get image from Flickr API</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>secretID</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>ID of the secret used to get image from Flickr API</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>completion</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>callback from the method once image data is recieved</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>result</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>return image Data that is recived from FLickr API</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -582,12 +410,70 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15ShudderFeatured030addCollectionSearchSetToBannerD05names10completionySaySSG_yyctF"></a>
+                    <a name="//apple_ref/swift/Function/addCollectionSearchSetToBannerCollection(names:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15ShudderFeatured030addCollectionSearchSetToBannerD05names10completionySaySSG_yyctF">addCollectionSearchSetToBannerCollection(names:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Take [String] of searches for Flickr API and do searches to recieve back and create [CarouselItems] and append them <strong>bannerCollection</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addCollectionSearchSetToBannerCollection</span><span class="p">(</span><span class="nv">names</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>names</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>[String] of words to be searched and created</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>callback for once the [CarouselSets] have been created and added to <strong>dataCollection</strong> to be loaded into <strong>FeaturedTableViewController</strong></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Qasim Abbas</a>. All rights reserved. (Last updated: 2018-11-20)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Qasim Abbas</a>. All rights reserved. (Last updated: 2018-11-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

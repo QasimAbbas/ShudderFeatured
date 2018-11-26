@@ -39,6 +39,9 @@
                 <a href="Classes/CarouselSet.html">CarouselSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/CustomCollectionView.html">CustomCollectionView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/FeaturedCell.html">FeaturedCell</a>
               </li>
               <li class="nav-group-task">
@@ -59,6 +62,9 @@
                 <a href="Global Variables.html#/s:15ShudderFeatured15backgroundColorSo7UIColorCvp">backgroundColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="Global Variables.html#/s:15ShudderFeatured16bannerCollectionSayAA11CarouselSetCGvp">bannerCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Global Variables.html#/s:15ShudderFeatured14dataCollectionSayAA11CarouselSetCGvp">dataCollection</a>
               </li>
               <li class="nav-group-task">
@@ -72,6 +78,9 @@
           <li class="nav-group-name">
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:15ShudderFeatured030addCollectionSearchSetToBannerD05names10completionySaySSG_yyctF">addCollectionSearchSetToBannerCollection(names:completion:)</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:15ShudderFeatured028addCollectionSearchSetToDataD05names10completionySaySSG_yyctF">addCollectionSearchSetToDataCollection(names:completion:)</a>
               </li>
@@ -101,14 +110,79 @@
         <section>
           <section class="section">
             
-            <h3 id='authors' class='heading'>Authors</h3>
+            <h1 id='shudder-featured-view-recreation' class='heading'>Shudder Featured View Recreation</h1>
+<h2 id='description' class='heading'>Description</h2>
 
-<p>Qasim Abbas</p>
+<p><img src="/Assets/view.png" alt="alt text" title="Logo Title Text 1"></p>
+<h3 id='purpose' class='heading'>Purpose</h3>
+
+<p>This is a reimplementation of the Shudder application&rsquo;s Featured View.  This view takes images from the Flickr API and displays them in Carousels.</p>
+<h3 id='structure' class='heading'>Structure</h3>
+
+<p>This project is designing using the Model-View-Controller design pattern as can be seen in xcode project.</p>
+
+<p>To create sections, an array of strings can be given inside of*<em>FeaturedTableViewController</em><em>, which is the controller of this application, in the **addCollectionSearchSetToDataCollection</em>* method inside <strong>viewDidLoad</strong> and from that array, <strong>API</strong> handles creating sections.  </p>
+
+<p><strong>DataCollection</strong> handles all of the storage of the images and organization of sections and items in each section.  Sections are represented as CarouselSets and items are represented as CarouselItems.  A CarouselItem is a single item that displays the image but can contain any other data needed for the item.  A CarouselSet contains an array of CarouselItems with a name, which acts as a section. DataCollection contains an array of CarouselSets.</p>
+
+<p>The way this project calls to Flickr API is created and managed with requests that first get the list of 25 results for each <em>word</em> that is given to <strong>addCollectionSearchSetToDataCollection</strong> and then calls to all the images. and load them into CarouselItems and CarouselSets.  All calls are done on separate threads to speed up calls and increase energy efficiency over a longer period of time.  Although this may lead to inconsistent ordering of images when calls are being received since there is not set order on when threads are finished running since some threads may be faster than others.</p>
+
+<p><strong>BannerCollection</strong> handles the storage and organization associated with images loading in the Banner, also known as the <q>Hero Carousel</q>.  This reuses the same structure of DataCollection and all of it&rsquo;s corresponding calls.</p>
+
+<p>Controller:</p>
+
+<ul>
+<li>FeaturedTableViewController - Controller that coordinates information and logic between the View and Model</li>
+</ul>
+
+<p>View:</p>
+
+<ul>
+<li>Main.Storyboard - Visual Structure and Views</li>
+<li>CarouselCell - View</li>
+</ul>
+
+<p>Model:</p>
+
+<ul>
+<li>CarouselItem - Data Class</li>
+<li>CarouselSet - Data Class</li>
+<li>DataObjects - Location of logic Data Classes and Data Structure</li>
+<li>API - All API calls and storage handling of data</li>
+</ul>
+<h3 id='tools' class='heading'>Tools</h3>
+
+<ul>
+<li>Xcode - Integrated development environment</li>
+<li>Swiftlint - Linter that handles swift syntactic sugar/code smells/other various swift structures for consistency and readability of code</li>
+<li>Jazzy - Documentation generator that creates a layout to view documentation as well as catch methods/properties that have not been documented.</li>
+</ul>
+<h3 id='documentation' class='heading'>Documentation</h3>
+
+<p>Jazzy cli is used to generate the documentation.</p>
+
+<p>Please open the <strong>index.html</strong>, located in <strong><em>ShudderFeatured/docs/</em></strong> in a browser to view all the documentation in a visual web page.</p>
+
+<p>A short demo can also be found in <strong><em>ShudderFeatured/Assets/ShudderDemo.mov</em></strong></p>
+
+<p><img src="/Assets/documentation.png" alt="alt text" title="Logo Title Text 1"></p>
+<h3 id='potential-issues-and-improvements' class='heading'>Potential Issues and Improvements</h3>
+
+<p><strong>Flickr API</strong> <br/>
+Flickr API is called on multiple threads to create more efficiency of network and energy from the amount of calls that needs to be created.  This also provides speed increase in speed as well.  Unfortunately this creates many calls to the server, 1 for each <em>section</em> and then for each <em>image</em> which can cause <strong>rate limiting</strong> and not be able to receive all the data and sections upon consecutive calls.  <strong>All data may not be received or loaded into Carousels including sections and individual items due to this issue!</strong> A solution to this problem is batch calling and waiting for the proper rate limit times.  <strong>This is not an issue currently present in the following data loaded being called from test</strong></p>
+
+<p>FlickrAPI Search as documented within Flickr API takes some time to run search queries.  We are calling n amount of queries for n sections concurrently but due to FlickAPI search we may not get all the search results if the full search on the server has not been done.  This may lead to some waiting for the users and more cost of energy for the cpu to produce the call.</p>
+
+<p><strong>Banner Carousel</strong> <br/>
+Banner Carousel is currently implemented by increasing by appending the BannerCollection Carousel by a multiplier of 5 with itself.  This is a <strong>Temporary Solution</strong> to the problem. A fix may be implementing a proper queue Data Structure that cycles the images and resets and saves the location of indexPaths and offsets. This current implementation has no significant impact on energy/cpu usage since the cells are dequeued when they are not in view but this may improve memory efficiency.</p>
+
+<p><strong>Image Data</strong> <br/>
+Currently the image data is being called and downloaded on separate threads as the view is being loaded with every image being stored after downloaded.  This creates a big impact on memory with having many images stored at once.  A potential improvement of the implementation is to do the FlickAPI call of each section and download images as they come into view as well as reuse the containers as they leave the view.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Qasim Abbas</a>. All rights reserved. (Last updated: 2018-11-20)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Qasim Abbas</a>. All rights reserved. (Last updated: 2018-11-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

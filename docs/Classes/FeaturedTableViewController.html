@@ -40,6 +40,9 @@
                 <a href="../Classes/CarouselSet.html">CarouselSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/CustomCollectionView.html">CustomCollectionView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/FeaturedCell.html">FeaturedCell</a>
               </li>
               <li class="nav-group-task">
@@ -60,6 +63,9 @@
                 <a href="../Global Variables.html#/s:15ShudderFeatured15backgroundColorSo7UIColorCvp">backgroundColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15ShudderFeatured16bannerCollectionSayAA11CarouselSetCGvp">bannerCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:15ShudderFeatured14dataCollectionSayAA11CarouselSetCGvp">dataCollection</a>
               </li>
               <li class="nav-group-task">
@@ -73,6 +79,9 @@
           <li class="nav-group-name">
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:15ShudderFeatured030addCollectionSearchSetToBannerD05names10completionySaySSG_yyctF">addCollectionSearchSetToBannerCollection(names:completion:)</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:15ShudderFeatured028addCollectionSearchSetToDataD05names10completionySaySSG_yyctF">addCollectionSearchSetToDataCollection(names:completion:)</a>
               </li>
@@ -162,6 +171,60 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15ShudderFeatured0B19TableViewControllerC17scrollBannerStartSbvp"></a>
+                    <a name="//apple_ref/swift/Property/scrollBannerStart" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15ShudderFeatured0B19TableViewControllerC17scrollBannerStartSbvp">scrollBannerStart</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flag to start the banner to start the correct location after all banner data is collected</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">scrollBannerStart</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15ShudderFeatured0B19TableViewControllerC11bannerItemsSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/bannerItems" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15ShudderFeatured0B19TableViewControllerC11bannerItemsSiSgvp">bannerItems</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checking for allocation of amount of items in banner that is recieved.  This is for allocation for a scroll in Hero Carousel</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bannerItems</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -560,12 +623,66 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ShudderFeatured@objc(cs)FeaturedTableViewController(im)collectionView:willDisplayCell:forItemAtIndexPath:"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:willDisplay:forItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ShudderFeatured@objc(cs)FeaturedTableViewController(im)collectionView:willDisplayCell:forItemAtIndexPath:">collectionView(_:willDisplay:forItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Banner scroll configuration to start at the middle of the Hero Carousel</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">willDisplay</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span><span class="p">,</span> <span class="n">forItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15ShudderFeatured0B19TableViewControllerC21bannerQueueSizeAdjustyyF"></a>
+                    <a name="//apple_ref/swift/Method/bannerQueueSizeAdjust()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15ShudderFeatured0B19TableViewControllerC21bannerQueueSizeAdjustyyF">bannerQueueSizeAdjust()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adjusting the size of bannerCollection after the allocation has happened.  This is a temporary fix but a better solution would be implementing the queue Data Structure.  This is still efficient being that the elements are not allocated until they are in view since cells are being reusued.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bannerQueueSizeAdjust</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Qasim Abbas</a>. All rights reserved. (Last updated: 2018-11-20)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Qasim Abbas</a>. All rights reserved. (Last updated: 2018-11-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

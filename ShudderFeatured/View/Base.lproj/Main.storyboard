@@ -201,7 +201,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Kx2-ry-jUY">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uHV-pu-XFz" customClass="TabBarController" customModule="ShudderFeatured" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uHV-pu-XFz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="exT-NX-Xnc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tni-rj-bwQ">

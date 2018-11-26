@@ -40,6 +40,9 @@
                 <a href="../Classes/CarouselSet.html">CarouselSet</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/CustomCollectionView.html">CustomCollectionView</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/FeaturedCell.html">FeaturedCell</a>
               </li>
               <li class="nav-group-task">
@@ -60,6 +63,9 @@
                 <a href="../Global Variables.html#/s:15ShudderFeatured15backgroundColorSo7UIColorCvp">backgroundColor</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15ShudderFeatured16bannerCollectionSayAA11CarouselSetCGvp">bannerCollection</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:15ShudderFeatured14dataCollectionSayAA11CarouselSetCGvp">dataCollection</a>
               </li>
               <li class="nav-group-task">
@@ -73,6 +79,9 @@
           <li class="nav-group-name">
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:15ShudderFeatured030addCollectionSearchSetToBannerD05names10completionySaySSG_yyctF">addCollectionSearchSetToBannerCollection(names:completion:)</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:15ShudderFeatured028addCollectionSearchSetToDataD05names10completionySaySSG_yyctF">addCollectionSearchSetToDataCollection(names:completion:)</a>
               </li>
@@ -135,7 +144,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="o">!</span></code></pre>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt"><a href="../Classes/CustomCollectionView.html">CustomCollectionView</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -172,9 +181,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15ShudderFeatured0B4CellC35setCollectionViewDataSourceDelegate04datahI06forRowyx_SitSo012UICollectionfgH0RzSo0mfI0RzlF"></a>
-                    <a name="//apple_ref/swift/Method/setCollectionViewDataSourceDelegate(dataSourceDelegate:forRow:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15ShudderFeatured0B4CellC35setCollectionViewDataSourceDelegate04datahI06forRowyx_SitSo012UICollectionfgH0RzSo0mfI0RzlF">setCollectionViewDataSourceDelegate(dataSourceDelegate:forRow:)</a>
+                    <a name="/s:15ShudderFeatured0B4CellC35setCollectionViewDataSourceDelegate04datahI06forRow0K10Identifieryx_SiSStSo012UICollectionfgH0RzSo0nfI0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/setCollectionViewDataSourceDelegate(dataSourceDelegate:forRow:forIdentifier:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15ShudderFeatured0B4CellC35setCollectionViewDataSourceDelegate04datahI06forRow0K10Identifieryx_SiSStSo012UICollectionfgH0RzSo0nfI0RzlF">setCollectionViewDataSourceDelegate(dataSourceDelegate:forRow:forIdentifier:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -191,7 +200,7 @@
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">setCollectionViewDataSourceDelegate</span>
     <span class="o">&lt;</span><span class="kt">D</span><span class="p">:</span> <span class="kt">UICollectionViewDataSource</span> <span class="o">&amp;</span> <span class="kt">UICollectionViewDelegate</span><span class="o">&gt;</span>
-    <span class="p">(</span><span class="nv">dataSourceDelegate</span><span class="p">:</span> <span class="kt">D</span><span class="p">,</span> <span class="n">forRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+    <span class="p">(</span><span class="nv">dataSourceDelegate</span><span class="p">:</span> <span class="kt">D</span><span class="p">,</span> <span class="n">forRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">forIdentifier</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -234,7 +243,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Qasim Abbas</a>. All rights reserved. (Last updated: 2018-11-20)</p>
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">Qasim Abbas</a>. All rights reserved. (Last updated: 2018-11-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

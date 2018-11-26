@@ -47,5 +47,6 @@ class FeaturedCell: UITableViewCell {
 
 ///Creating a custom CollectionView to separate the identifiers of Banners and Carousel to reuse the CollectionView Carousel Implementation
 class CustomCollectionView: UICollectionView {
+    ///Identifier to differentiate a Carousel CollectionView and Banner CollectionView
     var identifier: String = ""
 }
