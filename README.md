@@ -58,5 +58,3 @@ FlickrAPI Search as documented within Flickr API takes some time to run search q
 **Banner Carousel** <br/>
 Banner Carousel is currently implemented by increasing by appending the BannerCollection Carousel by a multiplier of 5 with itself.  This is a **Temporary Solution** to the problem. A fix may be implementing a proper queue Data Structure that cycles the images and resets and saves the location of indexPaths and offsets. This current implementation has no significant impact on energy/cpu usage since the cells are dequeued when they are not in view but this may improve memory efficiency.
 
-**Image Data** <br/>
-Currently the image data is being called and downloaded on separate threads as the view is being loaded with every image being stored after downloaded.  This creates a big impact on memory with having many images stored at once.  A potential improvement of the implementation is to do the FlickAPI call of each section and download images as they come into view as well as reuse the containers as they leave the view.
